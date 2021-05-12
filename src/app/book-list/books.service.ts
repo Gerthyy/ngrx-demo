@@ -14,6 +14,11 @@ export class GoogleBooksService {
       .get<{ items: Book[] }>(
         'https://www.googleapis.com/books/v1/volumes?maxResults=5&orderBy=relevance&q=oliver%20sacks'
       )
-      .pipe(map((books) => books.items || []));
+      .pipe(
+        map((books) => {
+          console.log('bookitems', books.items);
+          return books.items || [];
+        })
+      );
   }
 }

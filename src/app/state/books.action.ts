@@ -10,6 +10,11 @@ export const removeBook = createAction(
   props<{ bookId: any | undefined }>()
 );
 
+export const addAll = createAction(
+  '[Book List] Add all Book',
+  props<{ bookList: any | undefined }>()
+);
+
 export const retrievedBookList = createAction(
   '[Book List/API] Retrieve Books Success',
   props<{ Book: any | undefined }>()

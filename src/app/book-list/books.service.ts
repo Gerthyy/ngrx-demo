@@ -16,7 +16,6 @@ export class GoogleBooksService {
       )
       .pipe(
         map((books) => {
-          console.log('bookitems', books.items);
           return books.items || [];
         })
       );

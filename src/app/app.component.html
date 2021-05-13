@@ -4,3 +4,6 @@
 <h2>My Collection</h2>
 <app-book-collection class="book-collection" [books]="bookCollection$ | async" (remove)="onRemove($event)">
 </app-book-collection>
+<h2>My books-add-all</h2>
+<app-books-add-all (addAll)="onAddAll($event)" [booksList]="allBookList$ | async">
+</app-books-add-all>

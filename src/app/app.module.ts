@@ -11,14 +11,25 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BookCollectionComponent } from './book-collection/book-collection.component';
 import { booksReducer } from './state/books.reducer';
 import { collectionReducer } from './state/coolection.reducer';
+import { addAllReducer } from './state/booksaddall.reducer';
+import { BooksAddAllComponent } from './books-add-all/books-add-all.component';
 
 @NgModule({
-  declarations: [AppComponent, BookListComponent, BookCollectionComponent],
+  declarations: [
+    AppComponent,
+    BookListComponent,
+    BookCollectionComponent,
+    BooksAddAllComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot(
-      { books: booksReducer, collection: collectionReducer },
+      {
+        books: booksReducer,
+        collection: collectionReducer,
+        addAll: addAllReducer,
+      },
       {}
     ),
     StoreDevtoolsModule.instrument({

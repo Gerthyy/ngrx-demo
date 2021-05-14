@@ -1,7 +1,7 @@
 import { createReducer, on, Action } from '@ngrx/store';
 
-import { addAll } from './books.action';
-import { Book } from '../book-list/books.model';
+import { addAll } from '../actions/books.action';
+import { Book } from '../../book-list/books.model';
 
 export const initialState: any = [];
 

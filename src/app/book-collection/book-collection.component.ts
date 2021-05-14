@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { Book } from '../book-list/books.model';
 
 @Component({
@@ -6,7 +6,9 @@ import { Book } from '../book-list/books.model';
   templateUrl: './book-collection.component.html',
   styleUrls: ['./book-collection.component.css'],
 })
-export class BookCollectionComponent {
-  @Input() books: Array<Book> | undefined;
+export class BookCollectionComponent implements OnInit {
+  constructor() {}
+  @Input() books: Array<Book> = [];
   @Output() remove = new EventEmitter();
+  ngOnInit(): void {}
 }

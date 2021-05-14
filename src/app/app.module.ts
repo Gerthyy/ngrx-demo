@@ -9,9 +9,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookCollectionComponent } from './book-collection/book-collection.component';
-import { booksReducer } from './state/books.reducer';
-import { collectionReducer } from './state/coolection.reducer';
-import { addAllReducer } from './state/booksaddall.reducer';
+import { booksReducer } from './state/reducers/books.reducer';
+import { collectionReducer } from './state/reducers/coolection.reducer';
+import { addAllReducer } from './state/reducers/booksaddall.reducer';
 import { BooksAddAllComponent } from './books-add-all/books-add-all.component';
 
 @NgModule({

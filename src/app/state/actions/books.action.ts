@@ -7,7 +7,7 @@ export const addBook = createAction(
 
 export const removeBook = createAction(
   '[Book Collection] Remove Book',
-  props<{ bookId: any | undefined }>()
+  props<{ book: any | undefined }>()
 );
 
 export const addAll = createAction(

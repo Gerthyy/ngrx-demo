@@ -7,9 +7,9 @@ import {
   addBook,
   removeBook,
   addAll,
-} from './state/books.action';
+} from './state/actions/books.action';
 import { GoogleBooksService } from './book-list/books.service';
-import { map } from 'rxjs/operators';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -21,24 +21,29 @@ export class AppComponent {
   allBookList$: Observable<any>;
 
   onAdd(bookId: any) {
-    console.log('1', 'onadd');
-    this.store.dispatch(addBook({ bookId }));
+    let selectedBook: any = [];
+    this.store.select('books').subscribe((store_books: any) => {
+      selectedBook = store_books.filter((item: any) => {
+        return item.id === bookId;
+      });
+      console.log(selectedBook);
+    });
+    this.store.dispatch(addBook({ bookId: selectedBook }));
   }
 
-  onRemove(bookId: any) {
-    console.log('1', 'onRemove');
-    this.store.dispatch(removeBook({ bookId }));
+  onRemove(book: any) {
+    console.log('bookId', book);
+
+    this.store.dispatch(removeBook({ book }));
   }
 
-  onAddAll(bookList: any) {
+  onAddAll() {
     let bookLists: any = [];
     this.store.select('books').subscribe((store_books: any) => {
       bookLists = store_books.map((item: any) => {
-        return item['id'];
+        return item;
       });
     });
-    console.log(bookLists);
-
     this.store.dispatch(addAll({ bookList: bookLists }));
   }
 
@@ -48,12 +53,7 @@ export class AppComponent {
   ) {
     this.books$ = store.select('books');
     this.bookCollection$ = store.select('collection');
-    this.allBookList$ = store.select('addAll').pipe(
-      map(() => {
-        store.select('addAll');
-      })
-    );
-    console.log('3', 'constructor', this.books$, this.bookCollection$);
+    this.allBookList$ = store.select('addAll');
   }
 
   ngOnInit() {

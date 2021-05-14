@@ -8,7 +8,7 @@ import { Book } from '../book-list/books.model';
 export class BooksAddAllComponent implements OnInit {
   constructor() {}
 
-  @Input() booksList: Array<Book> = [];
+  @Input() books: Array<Book> = [];
   @Output() addAll = new EventEmitter();
 
   ngOnInit(): void {}

@@ -1,7 +1,13 @@
 <p>books-add-all works!</p>
 
-<div class="book-item" *ngFor="let book of booksList">
-  <p>{{book}}</p><span> by {{book}}</span>
+<div class="book-item" *ngFor="let book of books">
+  {{book['id']}}
+  <br>
+  {{book.volumeInfo.title}}
+  <br>
+  {{book.volumeInfo.publisher}}
+  <br>
+  {{book.volumeInfo.description}}
 </div>
 
-<button (click)="addAll.emit(booksList)" data-test="add-button">Add to Collection</button>
+<button (click)="addAll.emit()" data-test="add-button">Add to Collection</button>

@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/9e784b6a-005c-40c6-bd84-8d5a39afa666/resourceGroups/appsvc_linux_chinaeast2/providers/Microsoft.Web/sites/gerthdeploywebapplicationfirst",
+  "appService.deploySubpath": "."
+}

@@ -46,5 +46,6 @@
   },
   "main": "index.js",
   "author": "Gerth Wang <gerth.wang@henkel.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "git@github.com:Gerthyy/ngrx-demo.git"
 }
